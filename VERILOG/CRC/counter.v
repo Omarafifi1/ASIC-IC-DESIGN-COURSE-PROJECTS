@@ -1,4 +1,4 @@
-module counter #(parameter counter_width=4,data_width=8)(
+module counter #(parameter counter_width=$clog2(data_width*2),data_width=8)(
     input clk,rst_n,
     output reg valid,
     output active,done_tick,
@@ -31,7 +31,7 @@ always @(posedge clk,negedge rst_n) begin
   valid<=0;     
   end
   else begin
-  valid<=(counter!=15)?counter[counter_width-1]:0;  
+  valid<=(counter!=((2**counter_width)-1))?counter[counter_width-1]:0;  
   end
 end
 
