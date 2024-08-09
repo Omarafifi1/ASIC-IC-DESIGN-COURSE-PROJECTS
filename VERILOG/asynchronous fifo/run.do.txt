@@ -1,0 +1,22 @@
+vlib work
+vlog -f source_file.txt
+vsim -voptargs=+accs work.fifo_top_tb
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut1/w_address 
+add wave -position insertpoint sim:/fifo_top_tb/w_data_tb 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut1/full_flag 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut3/rd_address
+add wave -position insertpoint sim:/fifo_top_tb/rd_data_tb 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut3/empty_flag
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut1/sync_grey_coded_rd_ptr
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut1/w_clk 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut1/w_rst_n 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut1/w_inc 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut1/wr_ptr_grey_coded
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut1/wr_ptr 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut3/sync_grey_coded_wr_ptr 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut3/rd_clk 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut3/rd_rst_n 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut3/rd_inc 
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut3/rd_ptr_grey_coded
+add wave -position insertpoint sim:/fifo_top_tb/uut/dut3/rd_ptr 
+run -all

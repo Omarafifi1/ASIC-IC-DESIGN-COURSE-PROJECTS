@@ -1,0 +1,29 @@
+vlib work
+vlog -f source_file.txt
+vsim -voptargs=+accs work.RX_TOP_MODULE_TB_P8
+add wave *
+add wave -position insertpoint  \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut1/prescale \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut1/edge_done_tick \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut1/data_done_tick \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut1/sampling_tick \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut1/data_bit_counter \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut1/edge_counter
+add wave -position insertpoint  \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut0/sampled_bit \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut0/sampled_data
+add wave -position insertpoint  \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut2/start_glitch \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut2/deserializer_enable \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut2/data_sampler_enable \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut2/parity_check_enable \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut2/start_check_enable \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut2/stop_check_enable \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut2/counter_enable \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut2/data_valid \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut2/current_state
+add wave -position insertpoint  \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut3/p_data
+add wave -position insertpoint  \
+sim:/RX_TOP_MODULE_TB_P8/uut/dut4/parity_type
+run -all
