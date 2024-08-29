@@ -1,0 +1,5 @@
+enable_synchronizer.v
+enabled_ff.v
+pulse_gen.v
+top_module.v
+top_module_tb.v
