@@ -1,0 +1,7 @@
+fsm_control.v
+mux.v
+parity_calc.v
+serializer.v
+TOP_MODULE.v
+TOP_MODULE_TB.v
+
